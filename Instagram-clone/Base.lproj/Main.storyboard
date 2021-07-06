@@ -73,57 +73,52 @@
                     <connections>
                         <outlet property="passwordField" destination="uZo-iC-A4T" id="apq-uY-Zot"/>
                         <outlet property="usernameField" destination="ASF-6W-gzN" id="9Ix-B8-pTn"/>
-                        <segue destination="pE0-oc-Lgf" kind="presentation" identifier="toHomeScreen" modalPresentationStyle="fullScreen" id="mQT-BD-YBV"/>
+                        <segue destination="j8x-3K-YPV" kind="presentation" identifier="toHomeScreen" modalPresentationStyle="fullScreen" id="joF-tx-Sr7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="18.46153846153846" y="68.957345971563981"/>
         </scene>
-        <!--Root View Controller-->
-        <scene sceneID="MoG-ft-j6G">
+        <!--Home View Controller-->
+        <scene sceneID="YX3-i3-4DJ">
             <objects>
-                <tableViewController id="x6X-gT-JDo" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="AvH-g0-ZFc">
+                <viewController id="dU3-KY-CAc" customClass="HomeViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="9tL-hW-eJg">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="B2G-ZH-MwW"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="aSh-f9-wdC">
-                                <rect key="frame" x="0.0" y="24.333333969116211" width="390" height="43.666667938232422"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="aSh-f9-wdC" id="bcC-H2-uMr">
-                                    <rect key="frame" x="0.0" y="0.0" width="390" height="43.666667938232422"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="x6X-gT-JDo" id="ZfX-jr-h4e"/>
-                            <outlet property="delegate" destination="x6X-gT-JDo" id="xDn-1V-7hp"/>
-                        </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="ZMs-3q-ZMw"/>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="7wY-ix-snk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="doL-cw-ONO">
+                        <barButtonItem key="leftBarButtonItem" title="Log Out" id="piI-5Q-UzS">
+                            <connections>
+                                <action selector="didTapLogOut:" destination="dU3-KY-CAc" id="tvt-YV-RgB"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ShH-2m-LdZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1917" y="69"/>
+            <point key="canvasLocation" x="1774" y="69"/>
         </scene>
         <!--Navigation Controller-->
-        <scene sceneID="KSM-89-mNr">
+        <scene sceneID="Vsr-66-dZr">
             <objects>
-                <navigationController id="pE0-oc-Lgf" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="hWT-LJ-mvv">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="j8x-3K-YPV" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="VPG-BY-fOE">
                         <rect key="frame" x="0.0" y="44" width="390" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
+                    <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="x6X-gT-JDo" kind="relationship" relationship="rootViewController" id="qVd-Ni-hZT"/>
+                        <segue destination="dU3-KY-CAc" kind="relationship" relationship="rootViewController" id="es6-69-ojd"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="zgZ-j0-wVr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="arQ-L2-g0a" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1011" y="69"/>
+            <point key="canvasLocation" x="897" y="69"/>
         </scene>
     </scenes>
     <resources>
