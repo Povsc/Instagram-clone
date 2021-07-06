@@ -7,8 +7,9 @@
 
 #import "ComposeViewController.h"
 
-@interface ComposeViewController () <UITextViewDelegate>
+@interface ComposeViewController () <UITextViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 @property (weak, nonatomic) IBOutlet UITextView *captionField;
+@property (weak, nonatomic) IBOutlet UIImageView *imageView;
 
 @end
 
@@ -25,6 +26,10 @@
     // Add placeholder text
     self.captionField.text = @"Caption...";
     self.captionField.textColor = [UIColor  lightGrayColor];
+    
+    //Initiate picker
+    [self didTapImage:nil];
+    
 }
 
 - (IBAction)didTapCancel:(id)sender {
@@ -43,6 +48,27 @@
         textView.text = @"Caption...";
         textView.textColor = [UIColor lightGrayColor];
     }
+}
+
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info {
+    
+    // Get the image captured by the UIImagePickerController
+    UIImage *editedImage = info[UIImagePickerControllerEditedImage];
+
+    // Set image
+    self.imageView.image = editedImage;
+    
+    // Dismiss UIImagePickerController to go back to your original view controller
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (IBAction)didTapImage:(id)sender {
+    // Set up UIImagePickerController
+    UIImagePickerController *imagePickerVC = [UIImagePickerController new];
+    imagePickerVC.delegate = self;
+    imagePickerVC.allowsEditing = YES;
+
+    [self presentViewController:imagePickerVC animated:YES completion:nil];
 }
 /*
 #pragma mark - Navigation
