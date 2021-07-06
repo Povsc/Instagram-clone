@@ -20,6 +20,7 @@
 		C9F2B1212694E9E000D00228 /* Instagram_cloneTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C9F2B1202694E9E000D00228 /* Instagram_cloneTests.m */; };
 		C9F2B12C2694E9E100D00228 /* Instagram_cloneUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = C9F2B12B2694E9E100D00228 /* Instagram_cloneUITests.m */; };
 		C9F2B13A2694F8F400D00228 /* Keys.plist in Resources */ = {isa = PBXBuildFile; fileRef = C9F2B1392694F8F400D00228 /* Keys.plist */; };
+		C9F2B13C2694FD0100D00228 /* instagram_assets in Resources */ = {isa = PBXBuildFile; fileRef = C9F2B13B2694FD0100D00228 /* instagram_assets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,6 +67,7 @@
 		C9F2B12B2694E9E100D00228 /* Instagram_cloneUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Instagram_cloneUITests.m; sourceTree = "<group>"; };
 		C9F2B12D2694E9E100D00228 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C9F2B1392694F8F400D00228 /* Keys.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Keys.plist; sourceTree = "<group>"; };
+		C9F2B13B2694FD0100D00228 /* instagram_assets */ = {isa = PBXFileReference; lastKnownFileType = folder; path = instagram_assets; sourceTree = "<group>"; };
 		EC5A19C46EADF63CF2BA0494 /* Pods-Instagram-clone-Instagram-cloneUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Instagram-clone-Instagram-cloneUITests.debug.xcconfig"; path = "Target Support Files/Pods-Instagram-clone-Instagram-cloneUITests/Pods-Instagram-clone-Instagram-cloneUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		EFE7D588DE579718527CFB36 /* Pods-Instagram-clone.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Instagram-clone.release.xcconfig"; path = "Target Support Files/Pods-Instagram-clone/Pods-Instagram-clone.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -119,6 +121,7 @@
 				C9F2B12A2694E9E100D00228 /* Instagram-cloneUITests */,
 				C9F2B1022694E9DF00D00228 /* Products */,
 				4B27E30BF6E974D2F69E6204 /* Pods */,
+				C9F2B13B2694FD0100D00228 /* instagram_assets */,
 				DD9061A06A93DBDA7AA34EC4 /* Frameworks */,
 			);
 			sourceTree = "<group>";
@@ -288,6 +291,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C9F2B13A2694F8F400D00228 /* Keys.plist in Resources */,
+				C9F2B13C2694FD0100D00228 /* instagram_assets in Resources */,
 				C9F2B1142694E9E000D00228 /* LaunchScreen.storyboard in Resources */,
 				C9F2B1112694E9E000D00228 /* Assets.xcassets in Resources */,
 				C9F2B10F2694E9DF00D00228 /* Main.storyboard in Resources */,
