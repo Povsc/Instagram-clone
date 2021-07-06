@@ -8,10 +8,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Login View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="LoginViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -35,10 +35,16 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V7X-3a-bss">
                                 <rect key="frame" x="269" y="444" width="38" height="30"/>
                                 <state key="normal" title="Login"/>
+                                <connections>
+                                    <action selector="didTapLogIn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="QIt-ca-aZR"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ano-rG-ro5">
                                 <rect key="frame" x="97" y="444" width="54" height="30"/>
                                 <state key="normal" title="Sign Up"/>
+                                <connections>
+                                    <action selector="didTapSignUp:" destination="BYZ-38-t0r" eventType="touchUpInside" id="emA-kp-ihj"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -65,7 +71,9 @@
                         </constraints>
                     </view>
                     <connections>
-                        <segue destination="pE0-oc-Lgf" kind="presentation" modalPresentationStyle="fullScreen" id="mQT-BD-YBV"/>
+                        <outlet property="passwordField" destination="uZo-iC-A4T" id="apq-uY-Zot"/>
+                        <outlet property="usernameField" destination="ASF-6W-gzN" id="9Ix-B8-pTn"/>
+                        <segue destination="pE0-oc-Lgf" kind="presentation" identifier="toHomeScreen" modalPresentationStyle="fullScreen" id="mQT-BD-YBV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

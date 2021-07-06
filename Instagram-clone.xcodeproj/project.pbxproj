@@ -12,7 +12,6 @@
 		BE18A6E9EAD3764D4E832D9D /* Pods_Instagram_clone.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7AD27D385A04AE6771640D67 /* Pods_Instagram_clone.framework */; };
 		C9F2B1062694E9DF00D00228 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C9F2B1052694E9DF00D00228 /* AppDelegate.m */; };
 		C9F2B1092694E9DF00D00228 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C9F2B1082694E9DF00D00228 /* SceneDelegate.m */; };
-		C9F2B10C2694E9DF00D00228 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C9F2B10B2694E9DF00D00228 /* ViewController.m */; };
 		C9F2B10F2694E9DF00D00228 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C9F2B10D2694E9DF00D00228 /* Main.storyboard */; };
 		C9F2B1112694E9E000D00228 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C9F2B1102694E9E000D00228 /* Assets.xcassets */; };
 		C9F2B1142694E9E000D00228 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C9F2B1122694E9E000D00228 /* LaunchScreen.storyboard */; };
@@ -21,6 +20,7 @@
 		C9F2B12C2694E9E100D00228 /* Instagram_cloneUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = C9F2B12B2694E9E100D00228 /* Instagram_cloneUITests.m */; };
 		C9F2B13A2694F8F400D00228 /* Keys.plist in Resources */ = {isa = PBXBuildFile; fileRef = C9F2B1392694F8F400D00228 /* Keys.plist */; };
 		C9F2B13C2694FD0100D00228 /* instagram_assets in Resources */ = {isa = PBXBuildFile; fileRef = C9F2B13B2694FD0100D00228 /* instagram_assets */; };
+		C9F2B1402695046C00D00228 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C9F2B13F2695046C00D00228 /* LoginViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,8 +53,6 @@
 		C9F2B1052694E9DF00D00228 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		C9F2B1072694E9DF00D00228 /* SceneDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SceneDelegate.h; sourceTree = "<group>"; };
 		C9F2B1082694E9DF00D00228 /* SceneDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SceneDelegate.m; sourceTree = "<group>"; };
-		C9F2B10A2694E9DF00D00228 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		C9F2B10B2694E9DF00D00228 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		C9F2B10E2694E9DF00D00228 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C9F2B1102694E9E000D00228 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C9F2B1132694E9E000D00228 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -68,6 +66,8 @@
 		C9F2B12D2694E9E100D00228 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C9F2B1392694F8F400D00228 /* Keys.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Keys.plist; sourceTree = "<group>"; };
 		C9F2B13B2694FD0100D00228 /* instagram_assets */ = {isa = PBXFileReference; lastKnownFileType = folder; path = instagram_assets; sourceTree = "<group>"; };
+		C9F2B13E2695046C00D00228 /* LoginViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		C9F2B13F2695046C00D00228 /* LoginViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		EC5A19C46EADF63CF2BA0494 /* Pods-Instagram-clone-Instagram-cloneUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Instagram-clone-Instagram-cloneUITests.debug.xcconfig"; path = "Target Support Files/Pods-Instagram-clone-Instagram-cloneUITests/Pods-Instagram-clone-Instagram-cloneUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		EFE7D588DE579718527CFB36 /* Pods-Instagram-clone.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Instagram-clone.release.xcconfig"; path = "Target Support Files/Pods-Instagram-clone/Pods-Instagram-clone.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -139,12 +139,11 @@
 		C9F2B1032694E9DF00D00228 /* Instagram-clone */ = {
 			isa = PBXGroup;
 			children = (
+				C9F2B13D269503F500D00228 /* ViewControllers */,
 				C9F2B1042694E9DF00D00228 /* AppDelegate.h */,
 				C9F2B1052694E9DF00D00228 /* AppDelegate.m */,
 				C9F2B1072694E9DF00D00228 /* SceneDelegate.h */,
 				C9F2B1082694E9DF00D00228 /* SceneDelegate.m */,
-				C9F2B10A2694E9DF00D00228 /* ViewController.h */,
-				C9F2B10B2694E9DF00D00228 /* ViewController.m */,
 				C9F2B10D2694E9DF00D00228 /* Main.storyboard */,
 				C9F2B1102694E9E000D00228 /* Assets.xcassets */,
 				C9F2B1122694E9E000D00228 /* LaunchScreen.storyboard */,
@@ -171,6 +170,15 @@
 				C9F2B12D2694E9E100D00228 /* Info.plist */,
 			);
 			path = "Instagram-cloneUITests";
+			sourceTree = "<group>";
+		};
+		C9F2B13D269503F500D00228 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				C9F2B13E2695046C00D00228 /* LoginViewController.h */,
+				C9F2B13F2695046C00D00228 /* LoginViewController.m */,
+			);
+			path = ViewControllers;
 			sourceTree = "<group>";
 		};
 		DD9061A06A93DBDA7AA34EC4 /* Frameworks */ = {
@@ -422,7 +430,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C9F2B10C2694E9DF00D00228 /* ViewController.m in Sources */,
+				C9F2B1402695046C00D00228 /* LoginViewController.m in Sources */,
 				C9F2B1062694E9DF00D00228 /* AppDelegate.m in Sources */,
 				C9F2B1172694E9E000D00228 /* main.m in Sources */,
 				C9F2B1092694E9DF00D00228 /* SceneDelegate.m in Sources */,
