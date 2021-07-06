@@ -30,6 +30,9 @@
         
     }];
 }
+- (IBAction)didTapCamera:(id)sender {
+    [self performSegueWithIdentifier:@"toCamera" sender:nil];
+}
 
 /*
 #pragma mark - Navigation
