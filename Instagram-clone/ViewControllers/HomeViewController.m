@@ -8,10 +8,13 @@
 #import "HomeViewController.h"
 #import "Parse/Parse.h"
 #import "SceneDelegate.h"
+#import "Post.h"
+#import "FeedTableViewCell.h"
 
 @interface HomeViewController () <UITableViewDelegate, UITableViewDataSource>
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (strong, nonatomic) NSMutableArray *arrayOfPosts;
 
 @end
 
@@ -19,7 +22,26 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
+    self.tableView.dataSource = self;
+    self.tableView.delegate = self;
+    
+    // construct PFQuery
+    PFQuery *postQuery = [Post query];
+    [postQuery orderByDescending:@"createdAt"];
+    [postQuery includeKey:@"author"];
+    postQuery.limit = 20;
+
+    // fetch data asynchronously
+    [postQuery findObjectsInBackgroundWithBlock:^(NSArray<Post *> * _Nullable posts, NSError * _Nullable error) {
+        if (posts) {
+            self.arrayOfPosts = [posts mutableCopy];
+        }
+        else {
+            NSLog(@"Error: %@", error.localizedDescription);
+        }
+        [self.tableView  reloadData];
+    }];
 }
 - (IBAction)didTapLogOut:(id)sender {
     [PFUser logOutInBackgroundWithBlock:^(NSError * _Nullable error) {
@@ -36,6 +58,7 @@
     [self performSegueWithIdentifier:@"toCamera" sender:nil];
 }
 
+
 /*
 #pragma mark - Navigation
 
@@ -46,4 +69,25 @@
 }
 */
 
+- (nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
+    FeedTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"FeedTableViewCell"];
+    Post *post = self.arrayOfPosts[indexPath.row];
+    [self configureCell:cell withPost:post];
+    return cell;
+}
+
+- (NSInteger)tableView:(nonnull UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return self.arrayOfPosts.count;
+}
+
+- (void)configureCell:(FeedTableViewCell *)cell withPost: (Post *)post{
+    // Configure labels
+    cell.authorLabel.text = post.author.username;
+    cell.captionLabel.text = post.caption;
+    cell.likeLabel.text = [post.likeCount stringValue];
+
+    // Configure image
+    cell.postImageView.file = post.image;
+    [cell.postImageView loadInBackground];
+}
 @end
