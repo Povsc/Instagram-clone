@@ -11,6 +11,7 @@
 @interface ComposeViewController () <UITextViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 @property (weak, nonatomic) IBOutlet UITextView *captionField;
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
+@property (nonatomic) BOOL edited;
 
 @end
 
@@ -31,6 +32,8 @@
     //Initiate picker
     [self didTapImage:nil];
     
+    // Caption has not been edited
+    self.edited = false;
 }
 
 - (IBAction)didTapCancel:(id)sender {
@@ -41,6 +44,7 @@
     if (textView.textColor == [UIColor lightGrayColor]) {
         textView.text = nil;
         textView.textColor = [UIColor blackColor];
+        self.edited = true;
     }
 }
 
@@ -48,6 +52,7 @@
     if ([textView.text isEqual:@""]) {
         textView.text = @"Caption...";
         textView.textColor = [UIColor lightGrayColor];
+        self.edited = false;
     }
 }
 
@@ -99,6 +104,9 @@
 }
 
 - (IBAction)didTapShare:(id)sender {
+    if (!self.edited){
+        self.captionField.text = @"";
+    }
     [Post postUserImage:self.imageView.image
             withCaption: self.captionField.text
          withCompletion:^(BOOL succeeded, NSError * error) {
@@ -106,7 +114,7 @@
             NSLog(@"Error: %@", error.localizedDescription);
             
         } else {
-            NSLog(@"User registered successfully");
+            NSLog(@"Posted successfully");
             
             // manually segue to logged in view
             [self dismissViewControllerAnimated:YES completion:nil];
