@@ -23,6 +23,7 @@
 		C9F2B1402695046C00D00228 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C9F2B13F2695046C00D00228 /* LoginViewController.m */; };
 		C9F2B14326950B3500D00228 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C9F2B14226950B3500D00228 /* HomeViewController.m */; };
 		C9F2B149269515ED00D00228 /* ComposeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C9F2B148269515ED00D00228 /* ComposeViewController.m */; };
+		C9F2B14D269613B900D00228 /* Post.m in Sources */ = {isa = PBXBuildFile; fileRef = C9F2B14C269613B900D00228 /* Post.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -74,6 +75,8 @@
 		C9F2B14226950B3500D00228 /* HomeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
 		C9F2B147269515ED00D00228 /* ComposeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ComposeViewController.h; sourceTree = "<group>"; };
 		C9F2B148269515ED00D00228 /* ComposeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ComposeViewController.m; sourceTree = "<group>"; };
+		C9F2B14B269613B900D00228 /* Post.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Post.h; sourceTree = "<group>"; };
+		C9F2B14C269613B900D00228 /* Post.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Post.m; sourceTree = "<group>"; };
 		EC5A19C46EADF63CF2BA0494 /* Pods-Instagram-clone-Instagram-cloneUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Instagram-clone-Instagram-cloneUITests.debug.xcconfig"; path = "Target Support Files/Pods-Instagram-clone-Instagram-cloneUITests/Pods-Instagram-clone-Instagram-cloneUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		EFE7D588DE579718527CFB36 /* Pods-Instagram-clone.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Instagram-clone.release.xcconfig"; path = "Target Support Files/Pods-Instagram-clone/Pods-Instagram-clone.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -145,6 +148,7 @@
 		C9F2B1032694E9DF00D00228 /* Instagram-clone */ = {
 			isa = PBXGroup;
 			children = (
+				C9F2B14A2696139800D00228 /* PFObject */,
 				C9F2B13D269503F500D00228 /* ViewControllers */,
 				C9F2B1042694E9DF00D00228 /* AppDelegate.h */,
 				C9F2B1052694E9DF00D00228 /* AppDelegate.m */,
@@ -189,6 +193,15 @@
 				C9F2B148269515ED00D00228 /* ComposeViewController.m */,
 			);
 			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		C9F2B14A2696139800D00228 /* PFObject */ = {
+			isa = PBXGroup;
+			children = (
+				C9F2B14B269613B900D00228 /* Post.h */,
+				C9F2B14C269613B900D00228 /* Post.m */,
+			);
+			path = PFObject;
 			sourceTree = "<group>";
 		};
 		DD9061A06A93DBDA7AA34EC4 /* Frameworks */ = {
@@ -446,6 +459,7 @@
 				C9F2B149269515ED00D00228 /* ComposeViewController.m in Sources */,
 				C9F2B14326950B3500D00228 /* HomeViewController.m in Sources */,
 				C9F2B1092694E9DF00D00228 /* SceneDelegate.m in Sources */,
+				C9F2B14D269613B900D00228 /* Post.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
