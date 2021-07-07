@@ -62,6 +62,9 @@
     // Set image
     self.imageView.image = editedImage;
     
+    // Remove background color
+    self.imageView.backgroundColor = nil;
+    
     // Dismiss UIImagePickerController to go back to your original view controller
     [self dismissViewControllerAnimated:YES completion:nil];
 }
