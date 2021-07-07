@@ -6,6 +6,7 @@
 //
 
 #import "ComposeViewController.h"
+#import "Post.h"
 
 @interface ComposeViewController () <UITextViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 @property (weak, nonatomic) IBOutlet UITextView *captionField;
@@ -55,6 +56,9 @@
     // Get the image captured by the UIImagePickerController
     UIImage *editedImage = info[UIImagePickerControllerEditedImage];
 
+    // Resize image
+    editedImage = [self resizeImage:editedImage withSize:CGSizeMake(1800, 1800)];
+    
     // Set image
     self.imageView.image = editedImage;
     
@@ -91,7 +95,21 @@
     return newImage;
 }
 
-
+- (IBAction)didTapShare:(id)sender {
+    [Post postUserImage:self.imageView.image
+            withCaption: self.captionField.text
+         withCompletion:^(BOOL succeeded, NSError * error) {
+        if (error != nil) {
+            NSLog(@"Error: %@", error.localizedDescription);
+            
+        } else {
+            NSLog(@"User registered successfully");
+            
+            // manually segue to logged in view
+            [self dismissViewControllerAnimated:YES completion:nil];
+        }
+    }];
+}
 
 /*
 #pragma mark - Navigation

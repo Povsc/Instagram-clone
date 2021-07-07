@@ -163,7 +163,11 @@
                                 <action selector="didTapCancel:" destination="wkU-ki-azw" id="Wxi-WG-Ev5"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="Share" id="qrv-qm-Zob"/>
+                        <barButtonItem key="rightBarButtonItem" title="Share" id="qrv-qm-Zob">
+                            <connections>
+                                <action selector="didTapShare:" destination="wkU-ki-azw" id="am5-86-LNS"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="captionField" destination="pvW-JT-dbL" id="7BV-8P-la0"/>
