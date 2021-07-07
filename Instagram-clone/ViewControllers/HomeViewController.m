@@ -9,7 +9,9 @@
 #import "Parse/Parse.h"
 #import "SceneDelegate.h"
 
-@interface HomeViewController ()
+@interface HomeViewController () <UITableViewDelegate, UITableViewDataSource>
+
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 @end
 
