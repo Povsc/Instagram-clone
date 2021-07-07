@@ -72,6 +72,11 @@
 
     [self presentViewController:imagePickerVC animated:YES completion:nil];
 }
+
+- (IBAction)onScreenTap:(id)sender {
+    [self.view endEditing:TRUE];
+}
+
 /*
 #pragma mark - Navigation
 

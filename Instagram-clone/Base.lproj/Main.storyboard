@@ -142,6 +142,7 @@
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="pul-Q3-4ym"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="pvW-JT-dbL" firstAttribute="leading" secondItem="fFa-PX-rgX" secondAttribute="leading" id="21G-rd-xTh"/>
                             <constraint firstItem="fFa-PX-rgX" firstAttribute="leading" secondItem="pul-Q3-4ym" secondAttribute="leading" constant="57" id="2J6-Fu-HPV"/>
@@ -152,6 +153,9 @@
                             <constraint firstItem="fFa-PX-rgX" firstAttribute="centerX" secondItem="cgj-6g-T6g" secondAttribute="centerX" id="mEs-hg-GRs"/>
                             <constraint firstItem="pul-Q3-4ym" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="pvW-JT-dbL" secondAttribute="bottom" constant="40" id="ngf-hS-rxi"/>
                         </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="S9C-HE-d35" appends="YES" id="ARf-JD-x0w"/>
+                        </connections>
                     </view>
                     <navigationItem key="navigationItem" id="yKP-NK-fim">
                         <barButtonItem key="leftBarButtonItem" title="Cancel" id="8tc-c1-2wl">
@@ -170,6 +174,11 @@
                 <tapGestureRecognizer id="CQk-6x-Rly">
                     <connections>
                         <action selector="didTapImage:" destination="wkU-ki-azw" id="LPg-1D-aYC"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="S9C-HE-d35">
+                    <connections>
+                        <action selector="onScreenTap:" destination="wkU-ki-azw" id="LNB-Et-kzA"/>
                     </connections>
                 </tapGestureRecognizer>
             </objects>
