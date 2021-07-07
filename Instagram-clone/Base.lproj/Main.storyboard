@@ -93,7 +93,7 @@
                                 <rect key="frame" x="0.0" y="25" width="390" height="844"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="490" id="2dF-zX-3VQ">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="FeedTableViewCell" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="490" id="2dF-zX-3VQ" customClass="FeedTableViewCell">
                                         <rect key="frame" x="0.0" y="24.333333969116211" width="390" height="490"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="2dF-zX-3VQ" id="Z6R-gU-1tF">
@@ -157,6 +157,13 @@
                                                 <constraint firstItem="JvL-Go-SRJ" firstAttribute="leading" secondItem="Z6R-gU-1tF" secondAttribute="leadingMargin" id="yXg-SO-wRP"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="authorLabel" destination="ocM-aF-Ax1" id="enH-gM-whn"/>
+                                            <outlet property="captionLabel" destination="ptN-44-xzq" id="zFJ-Bg-GwE"/>
+                                            <outlet property="likeButton" destination="JvL-Go-SRJ" id="MHg-Kz-o9Z"/>
+                                            <outlet property="likeLabel" destination="uKa-yu-dKD" id="6rQ-L4-Vlx"/>
+                                            <outlet property="postImageView" destination="8nS-1J-CAV" id="s1b-aB-tvW"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
