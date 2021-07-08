@@ -12,10 +12,12 @@
 #import "FeedTableViewCell.h"
 #import "DetailsViewController.h"
 
-@interface HomeViewController () <UITableViewDelegate, UITableViewDataSource>
+@interface HomeViewController () <UITableViewDelegate, UITableViewDataSource, UIScrollViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (strong, nonatomic) NSMutableArray *arrayOfPosts;
+@property (assign, nonatomic) BOOL isMoreDataLoading;
+@property (assign, nonatomic) long skip;
 
 @end
 
@@ -27,6 +29,9 @@
     // Set tableview delegate and datasource
     self.tableView.dataSource = self;
     self.tableView.delegate = self;
+    
+    // Set skip value
+    self.skip = 0;
     
     // Instantiate refreshControl
     UIRefreshControl *refreshControl = [[UIRefreshControl alloc] init];
@@ -63,6 +68,7 @@
     [postQuery findObjectsInBackgroundWithBlock:^(NSArray<Post *> * _Nullable posts, NSError * _Nullable error) {
         if (posts) {
             self.arrayOfPosts = [posts mutableCopy];
+            self.skip = self.arrayOfPosts.count;
         }
         else {
             NSLog(@"Error: %@", error.localizedDescription);
@@ -114,4 +120,56 @@
     cell.postImageView.file = post.image;
     [cell.postImageView loadInBackground];
 }
+
+-(void)loadMoreData{
+    
+    // construct PFQuery
+    PFQuery *postQuery = [Post query];
+    [postQuery orderByDescending:@"createdAt"];
+    [postQuery includeKey:@"author"];
+    postQuery.limit = 20;
+    postQuery.skip = self.skip;
+
+    // fetch data asynchronously
+    [postQuery findObjectsInBackgroundWithBlock:^(NSArray<Post *> * _Nullable posts, NSError * _Nullable error) {
+        if (posts) {
+            // Update flag
+            self.isMoreDataLoading = false;
+            
+            // Use the new data to update the data source
+            [self.arrayOfPosts addObjectsFromArray:posts];
+            
+            // Increase skip number
+            self.skip += posts.count;
+            
+            // Reload the tableView now that there is new data
+            [self.tableView reloadData];
+        }
+        else {
+            NSLog(@"Error: %@", error.localizedDescription);
+        }
+        
+//        // Tell the refreshControl to stop spinning
+//         [refreshControl endRefreshing];
+        
+        // Refresh tableview
+        [self.tableView  reloadData];
+    }];
+    
+}
+
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView{
+    if(!self.isMoreDataLoading){
+        // Calculate the position of one screen length before the bottom of the results
+        int scrollViewContentHeight = self.tableView.contentSize.height;
+        int scrollOffsetThreshold = scrollViewContentHeight - self.tableView.bounds.size.height;
+        
+        // When the user has scrolled past the threshold, start requesting
+        if(scrollView.contentOffset.y > scrollOffsetThreshold && self.tableView.isDragging) {
+            self.isMoreDataLoading = true;
+            [self loadMoreData];
+        }
+    }
+}
+
 @end

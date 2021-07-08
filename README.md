@@ -2,7 +2,7 @@
 
 **Instagran-clone** is a photo sharing app using Parse as its backend.
 
-Time spent: **10** hours spent in total
+Time spent: **12** hours spent in total
 
 ## User Stories
 
@@ -18,9 +18,9 @@ The following **required** functionality is completed:
 
 The following **optional** features are implemented:
 
-- [ ] Run your app on your phone and use the camera to take the photo
-- [ ] User can load more posts once he or she reaches the bottom of the feed using infinite scrolling.
-- [ ] Show the username and creation time for each post
+- [x] Run your app on your phone and use the camera to take the photo
+- [x] User can load more posts once he or she reaches the bottom of the feed using infinite scrolling.
+- [x] Show the username and creation time for each post
 - [ ] User can use a Tab Bar to switch between a Home Feed tab (all posts) and a Profile tab (only posts published by the current user)
 - User Profiles:
   - [ ] Allow the logged in user to add a profile photo
