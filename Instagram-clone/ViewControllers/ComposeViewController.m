@@ -79,10 +79,10 @@
     UIImagePickerController *imagePickerVC = [UIImagePickerController new];
     imagePickerVC.delegate = self;
     imagePickerVC.allowsEditing = YES;
-    imagePickerVC.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
-
-
-    [self presentViewController:imagePickerVC animated:YES completion:nil];
+    UIAlertController *alert = [self setAlertWithPicker:imagePickerVC];
+    [self presentViewController:alert animated:YES completion:^{
+        // Do nothing
+    }];
 }
 
 - (IBAction)onScreenTap:(id)sender {
@@ -122,6 +122,34 @@
     }];
 }
 
+//Sets up 'AlertController'
+- (UIAlertController *)setAlertWithPicker: (UIImagePickerController *)imagePickerVC {
+    // Instantiate empty alert
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:nil
+                                                                               message:nil
+                                                                        preferredStyle:(UIAlertControllerStyleAlert)];
+    // create a camera
+    UIAlertAction *cameraAction = [UIAlertAction actionWithTitle:@"Camera"
+                                                        style:UIAlertActionStyleCancel
+                                                      handler:^(UIAlertAction * _Nonnull action) {
+        imagePickerVC.sourceType = UIImagePickerControllerSourceTypeCamera;
+        [self presentViewController:imagePickerVC animated:YES completion:nil];
+                                                      }];
+    // add the camera action to the alertController
+    [alert addAction:cameraAction];
+
+    // create an library action
+    UIAlertAction *libraryAction = [UIAlertAction actionWithTitle:@"Photo Library"
+                                                       style:UIAlertActionStyleDefault
+                                                     handler:^(UIAlertAction * _Nonnull action) {
+        imagePickerVC.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+        [self presentViewController:imagePickerVC animated:YES completion:nil];
+                                                     }];
+    // add the library action to the alert controller
+    [alert addAction:libraryAction];
+    
+    return alert;
+}
 /*
 #pragma mark - Navigation
 
