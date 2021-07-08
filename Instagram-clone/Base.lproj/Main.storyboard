@@ -162,7 +162,7 @@
                                             <outlet property="likeButton" destination="JvL-Go-SRJ" id="MHg-Kz-o9Z"/>
                                             <outlet property="likeLabel" destination="uKa-yu-dKD" id="6rQ-L4-Vlx"/>
                                             <outlet property="postImageView" destination="8nS-1J-CAV" id="dMY-Xc-fG2"/>
-                                            <segue destination="PGb-3q-LpI" kind="presentation" identifier="toDetails" modalPresentationStyle="fullScreen" id="ZvX-nA-t4x"/>
+                                            <segue destination="wTT-1d-Mgc" kind="show" identifier="toDetails" id="PUU-zv-mUV"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -198,10 +198,10 @@
             </objects>
             <point key="canvasLocation" x="1773.8461538461538" y="68.957345971563981"/>
         </scene>
-        <!--View Controller-->
+        <!--Details View Controller-->
         <scene sceneID="ocI-30-FbP">
             <objects>
-                <viewController id="wTT-1d-Mgc" sceneMemberID="viewController">
+                <viewController id="wTT-1d-Mgc" customClass="DetailsViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="zIu-j7-fJy">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -272,10 +272,18 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="wUe-4H-qWJ"/>
+                    <connections>
+                        <outlet property="authorLabel" destination="ZoN-rT-vY6" id="MeH-xa-AJ8"/>
+                        <outlet property="captionLabel" destination="6XK-V4-aLu" id="XBU-Fp-Ju1"/>
+                        <outlet property="createdAtLabel" destination="kZR-kl-OsX" id="W1H-NW-3UQ"/>
+                        <outlet property="likeButton" destination="bS8-iS-jh4" id="wzl-nd-rSm"/>
+                        <outlet property="likeLabel" destination="rPf-GR-Mhc" id="Cuy-Oa-iTB"/>
+                        <outlet property="postImageView" destination="0HS-si-5Gg" id="ZZT-e2-m5q"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="U8N-rc-W3K" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3780" y="510"/>
+            <point key="canvasLocation" x="2851" y="497"/>
         </scene>
         <!--Compose View Controller-->
         <scene sceneID="JtZ-k4-vDw">
@@ -391,24 +399,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RKZ-JI-nMT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2851" y="-367"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="wD6-fZ-X3J">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="PGb-3q-LpI" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Wes-8t-Mlw">
-                        <rect key="frame" x="0.0" y="44" width="390" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="wTT-1d-Mgc" kind="relationship" relationship="rootViewController" id="JnP-TB-oNz"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="bI9-2f-fA9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2851" y="510"/>
         </scene>
     </scenes>
     <resources>
