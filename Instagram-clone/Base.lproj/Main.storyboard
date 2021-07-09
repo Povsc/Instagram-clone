@@ -236,6 +236,7 @@
                                         </collectionViewCellContentView>
                                         <connections>
                                             <outlet property="postImageView" destination="ltO-n8-Smq" id="KtD-jA-KWK"/>
+                                            <segue destination="wTT-1d-Mgc" kind="show" id="gUP-g9-Nhj"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -383,7 +384,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="U8N-rc-W3K" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3780" y="421"/>
+            <point key="canvasLocation" x="3780" y="532"/>
         </scene>
         <!--Compose View Controller-->
         <scene sceneID="JtZ-k4-vDw">
@@ -539,6 +540,9 @@
             <point key="canvasLocation" x="1826" y="1080"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="gUP-g9-Nhj"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="heart" catalog="system" width="128" height="109"/>
         <image name="insta_camera_btn.png" width="25" height="25"/>
