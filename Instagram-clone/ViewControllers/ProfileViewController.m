@@ -6,14 +6,14 @@
 //
 
 #import "ProfileViewController.h"
-#import "Parse/Parse.h"
+@import Parse;
 #import "Post.h"
 #import "ProfileCollectionViewCell.h"
+#import "ProfileCollectionReusableView.h"
 
-@interface ProfileViewController () <UICollectionViewDelegate, UICollectionViewDataSource>
+@interface ProfileViewController () <UICollectionViewDelegate, UICollectionViewDataSource, UIImagePickerControllerDelegate>
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
 @property (strong, nonatomic) NSMutableArray *arrayOfPosts;
-
 @end
 
 @implementation ProfileViewController
@@ -70,6 +70,63 @@
      
 - (NSInteger)collectionView:(nonnull UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
     return self.arrayOfPosts.count;
+}
+
+- (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath{
+    ProfileCollectionReusableView *header = [collectionView dequeueReusableSupplementaryViewOfKind:kind withReuseIdentifier:@"ProfileCollectionReusableView" forIndexPath:indexPath];
+    header.profilePicture.file = [PFUser.currentUser objectForKey:@"profilePicture"];
+    [header.profilePicture loadInBackground];
+    header.username.text = PFUser.currentUser.username;
+    
+    return header;
+}
+- (IBAction)didTapSetPicture:(id)sender {
+    // Set up UIImagePickerController
+    UIImagePickerController *imagePickerVC = [UIImagePickerController new];
+    imagePickerVC.delegate = self;
+    imagePickerVC.allowsEditing = YES;
+    imagePickerVC.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+    [self presentViewController:imagePickerVC animated:YES completion:nil];
+}
+
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info {
+    
+    // Get the image captured by the UIImagePickerController
+    UIImage *editedImage = info[UIImagePickerControllerEditedImage];
+
+    // Resize image
+    editedImage = [self resizeImage:editedImage withSize:CGSizeMake(1800, 1800)];
+    
+    // Save image in the cloud
+    PFUser.currentUser[@"profilePicture"] = [Post getPFFileFromImage:editedImage];
+    [PFUser.currentUser saveInBackground];
+    
+    // Dismiss UIImagePickerController to go back to your original view controller
+    [self dismissViewControllerAnimated:YES completion:nil];
+    
+    // Reload data
+    [PFUser.currentUser fetchInBackgroundWithBlock:^( PFObject * _Nullable object, NSError * _Nullable error) {
+        if (error){
+            NSLog(@"Error: %@", error.localizedDescription);
+        }
+        else{
+            [self.collectionView reloadData];
+        }
+    }];
+}
+
+- (UIImage *)resizeImage:(UIImage *)image withSize:(CGSize)size {
+    UIImageView *resizeImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, size.width, size.height)];
+    
+    resizeImageView.contentMode = UIViewContentModeScaleAspectFill;
+    resizeImageView.image = image;
+    
+    UIGraphicsBeginImageContext(size);
+    [resizeImageView.layer renderInContext:UIGraphicsGetCurrentContext()];
+    UIImage *newImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    
+    return newImage;
 }
 
 @end
