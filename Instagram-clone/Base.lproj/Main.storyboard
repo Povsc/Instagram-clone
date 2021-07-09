@@ -202,7 +202,7 @@
         <!--Profile-->
         <scene sceneID="v96-Q2-PDz">
             <objects>
-                <viewController id="1hi-lg-Sla" sceneMemberID="viewController">
+                <viewController id="1hi-lg-Sla" customClass="ProfileViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="76C-zL-Yck">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -212,28 +212,44 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="F8x-hp-3Ax">
-                                    <size key="itemSize" width="208" height="208"/>
-                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="itemSize" width="171" height="171"/>
+                                    <size key="headerReferenceSize" width="50" height="133"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="vwN-AZ-LvB">
-                                        <rect key="frame" x="91" y="0.0" width="208" height="208"/>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ProfileCollectionViewCell" id="vwN-AZ-LvB" customClass="ProfileCollectionViewCell">
+                                        <rect key="frame" x="0.0" y="133" width="171" height="171"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="fZV-Km-s1A">
-                                            <rect key="frame" x="0.0" y="0.0" width="208" height="208"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="171" height="171"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ltO-n8-Smq" customClass="PFImageView">
+                                                    <rect key="frame" x="0.0" y="0.0" width="171" height="171"/>
+                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                </imageView>
+                                            </subviews>
                                         </collectionViewCellContentView>
-                                        <size key="customSize" width="208" height="208"/>
+                                        <size key="customSize" width="171" height="171"/>
+                                        <connections>
+                                            <outlet property="postImageView" destination="ltO-n8-Smq" id="KtD-jA-KWK"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
+                                <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="RqP-63-uvn">
+                                    <rect key="frame" x="0.0" y="0.0" width="390" height="133"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </collectionReusableView>
                             </collectionView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="8yl-Oe-oXe"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <navigationItem key="navigationItem" title="Profile" id="pHQ-FB-a52"/>
+                    <connections>
+                        <outlet property="collectionView" destination="sHH-9D-P9j" id="U8t-80-xsX"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3ht-2N-w9c" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

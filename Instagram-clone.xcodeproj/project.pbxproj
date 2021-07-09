@@ -26,6 +26,8 @@
 		C9F2B14D269613B900D00228 /* Post.m in Sources */ = {isa = PBXBuildFile; fileRef = C9F2B14C269613B900D00228 /* Post.m */; };
 		C9F2B15126963ED100D00228 /* FeedTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C9F2B15026963ED100D00228 /* FeedTableViewCell.m */; };
 		C9F2B154269667EF00D00228 /* DetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C9F2B153269667EF00D00228 /* DetailsViewController.m */; };
+		C9F2B15A2698EA5500D00228 /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C9F2B1592698EA5500D00228 /* ProfileViewController.m */; };
+		C9F2B15D2698EDC900D00228 /* ProfileCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C9F2B15C2698EDC900D00228 /* ProfileCollectionViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -83,6 +85,10 @@
 		C9F2B15026963ED100D00228 /* FeedTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FeedTableViewCell.m; sourceTree = "<group>"; };
 		C9F2B152269667EF00D00228 /* DetailsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailsViewController.h; sourceTree = "<group>"; };
 		C9F2B153269667EF00D00228 /* DetailsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailsViewController.m; sourceTree = "<group>"; };
+		C9F2B1582698EA5500D00228 /* ProfileViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProfileViewController.h; sourceTree = "<group>"; };
+		C9F2B1592698EA5500D00228 /* ProfileViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProfileViewController.m; sourceTree = "<group>"; };
+		C9F2B15B2698EDC900D00228 /* ProfileCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProfileCollectionViewCell.h; sourceTree = "<group>"; };
+		C9F2B15C2698EDC900D00228 /* ProfileCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProfileCollectionViewCell.m; sourceTree = "<group>"; };
 		EC5A19C46EADF63CF2BA0494 /* Pods-Instagram-clone-Instagram-cloneUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Instagram-clone-Instagram-cloneUITests.debug.xcconfig"; path = "Target Support Files/Pods-Instagram-clone-Instagram-cloneUITests/Pods-Instagram-clone-Instagram-cloneUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		EFE7D588DE579718527CFB36 /* Pods-Instagram-clone.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Instagram-clone.release.xcconfig"; path = "Target Support Files/Pods-Instagram-clone/Pods-Instagram-clone.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -200,6 +206,8 @@
 				C9F2B148269515ED00D00228 /* ComposeViewController.m */,
 				C9F2B152269667EF00D00228 /* DetailsViewController.h */,
 				C9F2B153269667EF00D00228 /* DetailsViewController.m */,
+				C9F2B1582698EA5500D00228 /* ProfileViewController.h */,
+				C9F2B1592698EA5500D00228 /* ProfileViewController.m */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -218,6 +226,8 @@
 			children = (
 				C9F2B14F26963ED100D00228 /* FeedTableViewCell.h */,
 				C9F2B15026963ED100D00228 /* FeedTableViewCell.m */,
+				C9F2B15B2698EDC900D00228 /* ProfileCollectionViewCell.h */,
+				C9F2B15C2698EDC900D00228 /* ProfileCollectionViewCell.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -475,8 +485,10 @@
 				C9F2B1062694E9DF00D00228 /* AppDelegate.m in Sources */,
 				C9F2B1172694E9E000D00228 /* main.m in Sources */,
 				C9F2B149269515ED00D00228 /* ComposeViewController.m in Sources */,
+				C9F2B15A2698EA5500D00228 /* ProfileViewController.m in Sources */,
 				C9F2B14326950B3500D00228 /* HomeViewController.m in Sources */,
 				C9F2B15126963ED100D00228 /* FeedTableViewCell.m in Sources */,
+				C9F2B15D2698EDC900D00228 /* ProfileCollectionViewCell.m in Sources */,
 				C9F2B154269667EF00D00228 /* DetailsViewController.m in Sources */,
 				C9F2B1092694E9DF00D00228 /* SceneDelegate.m in Sources */,
 				C9F2B14D269613B900D00228 /* Post.m in Sources */,
