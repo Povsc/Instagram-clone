@@ -172,10 +172,14 @@
                         <viewLayoutGuide key="safeArea" id="B2G-ZH-MwW"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="xMW-ts-e5g" firstAttribute="top" secondItem="9tL-hW-eJg" secondAttribute="top" constant="25" id="IFD-4i-ujb"/>
+                            <constraint firstAttribute="bottom" secondItem="xMW-ts-e5g" secondAttribute="bottom" constant="-25" id="LHv-Rw-bco"/>
                             <constraint firstItem="xMW-ts-e5g" firstAttribute="leading" secondItem="B2G-ZH-MwW" secondAttribute="leading" id="LoJ-9m-lfp"/>
                             <constraint firstItem="xMW-ts-e5g" firstAttribute="top" secondItem="9tL-hW-eJg" secondAttribute="top" constant="25" id="RTA-pD-H7Q"/>
+                            <constraint firstItem="xMW-ts-e5g" firstAttribute="leading" secondItem="B2G-ZH-MwW" secondAttribute="leading" id="T5n-Gb-4wq"/>
                             <constraint firstItem="xMW-ts-e5g" firstAttribute="trailing" secondItem="B2G-ZH-MwW" secondAttribute="trailing" id="hBK-Bw-1J9"/>
                             <constraint firstAttribute="bottom" secondItem="xMW-ts-e5g" secondAttribute="bottom" constant="-25" id="jIc-qc-qhY"/>
+                            <constraint firstItem="xMW-ts-e5g" firstAttribute="trailing" secondItem="B2G-ZH-MwW" secondAttribute="trailing" id="oDi-qC-c18"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Home Feed" id="doL-cw-ONO">
@@ -207,11 +211,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="sHH-9D-P9j">
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="sHH-9D-P9j">
                                 <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="F8x-hp-3Ax">
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="F8x-hp-3Ax">
                                     <size key="itemSize" width="171" height="171"/>
                                     <size key="headerReferenceSize" width="50" height="209"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
@@ -231,7 +234,6 @@
                                                 </imageView>
                                             </subviews>
                                         </collectionViewCellContentView>
-                                        <size key="customSize" width="171" height="171"/>
                                         <connections>
                                             <outlet property="postImageView" destination="ltO-n8-Smq" id="KtD-jA-KWK"/>
                                         </connections>
@@ -274,6 +276,12 @@
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="8yl-Oe-oXe"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="sHH-9D-P9j" firstAttribute="top" secondItem="76C-zL-Yck" secondAttribute="top" id="2Xy-oZ-2Ea"/>
+                            <constraint firstItem="sHH-9D-P9j" firstAttribute="trailing" secondItem="8yl-Oe-oXe" secondAttribute="trailing" id="7Wj-mC-2qY"/>
+                            <constraint firstAttribute="bottom" secondItem="sHH-9D-P9j" secondAttribute="bottom" id="feQ-AG-pHw"/>
+                            <constraint firstItem="sHH-9D-P9j" firstAttribute="leading" secondItem="8yl-Oe-oXe" secondAttribute="leading" id="lZh-i7-LfL"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Profile" id="pHQ-FB-a52">
                         <barButtonItem key="leftBarButtonItem" title="Set Picture" id="7dK-nd-0Ed">

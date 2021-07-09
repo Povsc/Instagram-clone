@@ -46,6 +46,16 @@
         
         [self.collectionView reloadData];
     }];
+    
+    // Fix layout for collection view
+    UICollectionViewFlowLayout *layout = (UICollectionViewFlowLayout *) self.collectionView.collectionViewLayout;
+    
+    layout.minimumInteritemSpacing = 3;
+    layout.minimumLineSpacing = 2;
+    CGFloat itemsPerLine = 3;
+    CGFloat itemWidth = (self.collectionView.frame.size.width - layout.minimumInteritemSpacing * (itemsPerLine -1)) / itemsPerLine;
+    CGFloat itemHeight = 1.5 * itemWidth;
+    layout.itemSize = CGSizeMake(itemWidth, itemHeight);
 }
 
 /*
