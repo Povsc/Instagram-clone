@@ -2,7 +2,7 @@
 
 **Instagran-clone** is a photo sharing app using Parse as its backend.
 
-Time spent: **12** hours spent in total
+Time spent: **18** hours spent in total
 
 ## User Stories
 
@@ -21,10 +21,10 @@ The following **optional** features are implemented:
 - [x] Run your app on your phone and use the camera to take the photo
 - [x] User can load more posts once he or she reaches the bottom of the feed using infinite scrolling.
 - [x] Show the username and creation time for each post
-- [ ] User can use a Tab Bar to switch between a Home Feed tab (all posts) and a Profile tab (only posts published by the current user)
+- [x] User can use a Tab Bar to switch between a Home Feed tab (all posts) and a Profile tab (only posts published by the current user)
 - User Profiles:
-  - [ ] Allow the logged in user to add a profile photo
-  - [ ] Display the profile photo with each post
+  - [x] Allow the logged in user to add a profile photo
+  - [x] Display the profile photo with each post
   - [ ] Tapping on a post's username or profile photo goes to that user's profile page
 - [ ] After the user submits a new post, show a progress HUD while the post is being uploaded to Parse
 - [ ] User can comment on a post and see all comments for each post in the post details screen.
@@ -46,7 +46,11 @@ Please list two areas of the assignment you'd like to **discuss further with you
 
 Here's a walkthrough of implemented user stories:
 
-(Yet to be uploaded).
+![Instagram 1](https://user-images.githubusercontent.com/73599216/125146533-3cb3f200-e0f4-11eb-97a7-67343ab4a6bb.gif)
+![Instagram 2](https://user-images.githubusercontent.com/73599216/125146537-3faee280-e0f4-11eb-9c7d-6cbadea8379d.gif)
+![Instagram 3](https://user-images.githubusercontent.com/73599216/125146553-4ccbd180-e0f4-11eb-8fce-35c4f256c632.gif)
+![Instagram 4](https://user-images.githubusercontent.com/73599216/125146614-ab914b00-e0f4-11eb-92ed-3f896e55f4d0.gif)
+
 
 GIF created with [Kap](https://getkap.co/).
 
