@@ -115,6 +115,10 @@
     cell.authorLabel.text = post.author.username;
     cell.captionLabel.text = post.caption;
     cell.likeLabel.text = [post.likeCount stringValue];
+    
+    // Configure Profile pic
+    cell.profilePicture.file = [post.author objectForKey:@"profilePicture"];
+    [cell.profilePicture loadInBackground];
 
     // Configure image
     cell.postImageView.file = post.image;
